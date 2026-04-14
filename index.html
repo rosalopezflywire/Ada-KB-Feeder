@@ -27,9 +27,9 @@ header { background: var(--surface); border-bottom: 1px solid var(--border); pad
 .sep { color: var(--border-s); }
 header h1 { font-size: 15px; font-weight: 500; }
 
-.layout { display: grid; grid-template-columns: 260px minmax(0,1fr); gap: 16px; max-width: 920px; margin: 0 auto; padding: 20px; }
+.layout { display: grid; grid-template-columns: 260px minmax(0,1fr); gap: 16px; max-width: 920px; margin: 0 auto; padding: 20px; align-items: start; }
 .left-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
-.right-col { min-width: 0; }
+.right-col { min-width: 0; position: sticky; top: 20px; }
 
 .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--rl); }
 .ph { padding: 11px 16px; border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; justify-content: space-between; }
@@ -91,7 +91,7 @@ textarea { resize: vertical; }
 .badge.manual { background: var(--amber-bg); color: var(--amber); border: 1px solid #d4b87a; }
 
 /* Right panel */
-.preview-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--rl); min-width: 0; }
+.preview-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--rl); min-width: 0; display: flex; flex-direction: column; }
 .phead { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--border); background: var(--bg); gap: 8px; flex-wrap: wrap; }
 .ptitle { font-size: 14px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 280px; }
 .pmode-tabs { display: flex; gap: 2px; }
@@ -99,7 +99,7 @@ textarea { resize: vertical; }
 .pmode-btn:hover { background: var(--surface); }
 .pmode-btn.on { background: var(--surface); border-color: var(--border); color: var(--text); }
 
-.pbody { padding: 22px 26px; max-height: 580px; overflow-y: auto; font-size: 14px; line-height: 1.75; color: var(--text); min-width: 0; overflow-x: hidden; word-break: break-word; }
+.pbody { padding: 22px 26px; height: calc(100vh - 160px); overflow-y: auto; font-size: 14px; line-height: 1.75; color: var(--text); min-width: 0; overflow-x: hidden; word-break: break-word; }
 .pbody h1 { font-size: 21px; font-weight: 500; margin: 0 0 14px; }
 .pbody h2 { font-size: 17px; font-weight: 500; margin: 26px 0 9px; padding-bottom: 5px; border-bottom: 1px solid var(--border); }
 .pbody h3 { font-size: 15px; font-weight: 500; margin: 18px 0 7px; }
@@ -129,7 +129,7 @@ textarea { resize: vertical; }
 .editor-actions { display: flex; gap: 8px; margin-top: 12px; align-items: center; }
 .raw-body { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; color: var(--muted); line-height: 1.6; }
 
-.empty { display: flex; align-items: center; justify-content: center; min-height: 340px; color: var(--hint); font-size: 13px; flex-direction: column; gap: 8px; }
+.empty { display: flex; align-items: center; justify-content: center; height: calc(100vh - 160px); color: var(--hint); font-size: 13px; flex-direction: column; gap: 8px; }
 .empty-icon { font-size: 32px; opacity: .2; }
 
 .msg { font-size: 12px; margin-top: 6px; padding: 6px 10px; border-radius: var(--r); }
